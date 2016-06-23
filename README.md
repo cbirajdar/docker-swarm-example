@@ -44,7 +44,12 @@ For this example, we will download the official docker image for redis and try t
 
 It may take few minutes to download and run the image.
 
-Once it returns, on running ```docker ps -a```, you will notice that this image is running on one of the swarm agents.
+Once it returns, on running ```docker ps```, you will notice that this image is running on one of the swarm agents (something similar as below).
+
+```
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+62626fd746bd        redis               "docker-entrypoint.sh"   20 hours ago        Up 20 hours         6379/tcp            swarm-agent1/redis
+```
 
 Basically, swarm master instructed one of the registered agent machines (based on the scheduling strategy) to pull the image and run it in a docker container.
 
